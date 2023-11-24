@@ -5,8 +5,6 @@
 3. Character page
 4. Character customization and inventory
 5. Minigames
-6. Database
+6. ~~Database~~
 7. Cookie login
-8. Apmeklētās viets ?
-
-Ko mes daram ar datubazi, testesanai izmantojam lokalu(jasaprot kas un ka) vai uzreiz kaut kadu host?
+8. Apmeklētās vietas ?
