@@ -6,7 +6,7 @@
 4. Character customization and inventory
 5. Minigames
 6. ~~Database~~
-7. Cookie login
+7. ~~Cookie login~~
 8. Apmeklētās vietas ?
 
 
@@ -14,4 +14,4 @@ Ka mes uztaisam login?
 Kur mums ir charachter page?
 Ka mes izveidojam minigames?
 Ka mes istenojam minigames funkciju (ar lokacijas prikolu)?
-Kadus minigame mes taisam?
+Kadus minigame mes taisam? (varam no club penguin paspikot)
