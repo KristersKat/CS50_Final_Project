@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="welcome.css">
+    <script>
+        function map(){
+            window.location='index.html';
+        }
+    </script>
+    <style>
+        .welcome-message {
+            text-align: center;
+            margin-top: 200px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        .custom-btn {
+            font-size: 24px; /* Adjust the font size as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-message">Aizkraukles izzinošā karte</h1>
+    </div>
+
+    <div class="btn-container">
+        <a href="index.html">
+            <button class="btn btn-outline-info custom-btn" onclick="map();">Tālāk</button>
+        </a>
+    </div>
+</body>
+</html>
