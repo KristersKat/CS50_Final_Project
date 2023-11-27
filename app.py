@@ -17,7 +17,7 @@ def index():
     user_list = result.fetchall()
     
     print(user_list)
-    return render_template("testLocation.html")
+    return render_template("welcome.html")
 
 # Adds new user to database
 @app.route('/newuser', methods = ['POST'])

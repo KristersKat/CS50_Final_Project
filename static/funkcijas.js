@@ -1,6 +1,6 @@
 function createcafeMarker(map){
     var cafeIcon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
