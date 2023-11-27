@@ -17,6 +17,10 @@ def index():
     user_list = result.fetchall()
     
     print(user_list)
+    return render_template("karte.html")
+
+@app.route('/welcome')
+def welcome():
     return render_template("welcome.html")
 
 # Adds new user to database

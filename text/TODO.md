@@ -15,3 +15,5 @@ Kur mums ir charachter page?
 Ka mes izveidojam minigames?
 Ka mes istenojam minigames funkciju (ar lokacijas prikolu)?
 Kadus minigame mes taisam? (varam no club penguin paspikot)
+
+Izstastit ka darbojas mysql vscode
