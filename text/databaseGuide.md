@@ -4,4 +4,7 @@
 
 # When getting from database
     result = db.session.execute(text("SELECT * FROM Users"))
+    If you need the row
     user_list = result.fetchall()
+    If you need a single value
+    user_value = result.scalar() 
