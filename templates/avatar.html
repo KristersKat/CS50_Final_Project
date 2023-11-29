@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tēls</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="avatar.css">
-    <script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avatar</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script>
+    function navigateToPage(icon) {
+      window.location.href = "karte.html?icon=" + icon;
+    }
 
-    </script>
-    <style>
+    function map() {
+      window.location.href = "karte.html";
+    }
+  </script>
+  <style>
+    .welcome-message {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      color: #000000;
+    }
 
-    </style>
-    </head>
-    <body>
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-    </body>
+    .button-container .btn {
+      margin: 0 10px;
+    }
+
+    .bite img {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="welcome-message">Izvēlies savu tēlu</h1>
+  </div>
+  <div class="button-container">
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('bitee')"><img src="../static/bite.jpg" /></button>
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('spare')"><img src="../static/spare.jpg" /></button>
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('putns')"><img src="../static/putns.jpg" /></button>
+  </div>
+  <div class="button-container">
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('sienazis')"><img src="../static/sienazis.jpg" /></button>
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('taurenis')"><img src="../static/taurenis.jpg" /></button>
+    <button class="btn btn-outline-light bite" onclick="navigateToPage('mare')"><img src="../static/mare.jpg" /></button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
 </html>

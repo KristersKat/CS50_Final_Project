@@ -16,7 +16,7 @@ function createcafeMarker(map){
 
 function createcafe2Marker(map){
     var cafe2Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -32,7 +32,7 @@ function createcafe2Marker(map){
 
 function createcafe3Marker(map){
     var cafe3Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -48,7 +48,7 @@ function createcafe3Marker(map){
 
 function createcafe4Marker(map){
     var cafe4Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -63,7 +63,7 @@ function createcafe4Marker(map){
 
 function createcafe5Marker(map){
     var cafe5Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -78,7 +78,7 @@ function createcafe5Marker(map){
 
 function createcafe6Marker(map){
     var cafe6Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -93,7 +93,7 @@ function createcafe6Marker(map){
 
 function createcafe7Marker(map){
     var cafe7Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -108,7 +108,7 @@ function createcafe7Marker(map){
 
 function createcafe8Marker(map){
     var cafe8Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -123,7 +123,7 @@ function createcafe8Marker(map){
 
 function createcafe9Marker(map){
     var cafe9Icon = L.icon({
-        iconUrl: 'cafe.png',
+        iconUrl: '../static/cafe.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -138,7 +138,7 @@ function createcafe9Marker(map){
 
 function createdarzsMarker(map){
     var darzsIcon = L.icon({
-        iconUrl: 'darzs.png',
+        iconUrl: '../static/darzs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -154,7 +154,7 @@ function createdarzsMarker(map){
 
 function createdarzs2Marker(map){
     var darzs2Icon = L.icon({
-        iconUrl: 'darzs.png',
+        iconUrl: '../static/darzs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -170,7 +170,7 @@ function createdarzs2Marker(map){
 
 function createdarzs3Marker(map){
     var darzs3Icon = L.icon({
-        iconUrl: 'darzs.png',
+        iconUrl: '../static/darzs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -186,7 +186,7 @@ function createdarzs3Marker(map){
 
 function createdarzs4Marker(map){
     var darzs4Icon = L.icon({
-        iconUrl: 'darzs.png',
+        iconUrl: '../static/darzs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -202,7 +202,7 @@ function createdarzs4Marker(map){
 
 function createdarzs5Marker(map){
     var darzs5Icon = L.icon({
-        iconUrl: 'darzs.png',
+        iconUrl: '../static/darzs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -218,7 +218,7 @@ function createdarzs5Marker(map){
 
 function createMuzejsMarker(map) {
     var muzejsIcon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -233,7 +233,7 @@ function createMuzejsMarker(map) {
 
 function createMuzejs2Marker(map) {
     var muzejs2Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -248,7 +248,7 @@ function createMuzejs2Marker(map) {
 
 function createMuzejs3Marker(map) {
     var muzejs3Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -263,7 +263,7 @@ function createMuzejs3Marker(map) {
 
 function createMuzejs4Marker(map) {
     var muzejs4Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -278,7 +278,7 @@ function createMuzejs4Marker(map) {
 
 function createMuzejs5Marker(map) {
     var muzejs5Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -293,7 +293,7 @@ function createMuzejs5Marker(map) {
 
 function createMuzejs6Marker(map) {
     var muzejs6Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -308,7 +308,7 @@ function createMuzejs6Marker(map) {
 
 function createMuzejs7Marker(map) {
     var muzejs7Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -323,7 +323,7 @@ function createMuzejs7Marker(map) {
 
 function createMuzejs8Marker(map) {
     var muzejs8Icon = L.icon({
-        iconUrl: 'muzejs.png',
+        iconUrl: '../static/muzejs.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -339,7 +339,7 @@ function createMuzejs8Marker(map) {
 
 function createPilskalnsMarker(map){
     var pilskalnsIcon = L.icon({
-        iconUrl: 'pils.png',
+        iconUrl: '../static/pils.png',
         iconSize: [40, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -354,7 +354,7 @@ function createPilskalnsMarker(map){
 
 function createPilskalns2Marker(map){
     var pilskalns2Icon = L.icon({
-        iconUrl: 'pils.png',
+        iconUrl: '../static/pils.png',
         iconSize: [40, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -369,7 +369,7 @@ function createPilskalns2Marker(map){
 
 function createMuizaMarker(map){
     var muizaIcon = L.icon({
-        iconUrl: 'muiza.png',
+        iconUrl: '../static/muiza.png',
         iconSize: [150, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -384,7 +384,7 @@ function createMuizaMarker(map){
 
 function createMuiza2Marker(map){
     var muiza2Icon = L.icon({
-        iconUrl: 'muiza.png',
+        iconUrl: '../static/muiza.png',
         iconSize: [150, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -399,7 +399,7 @@ function createMuiza2Marker(map){
 
 function createMuiza3Marker(map){
     var muiza3Icon = L.icon({
-        iconUrl: 'muiza.png',
+        iconUrl: '../static/muiza.png',
         iconSize: [150, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -414,7 +414,7 @@ function createMuiza3Marker(map){
 
 function createMuiza4Marker(map){
     var muiza4Icon = L.icon({
-        iconUrl: 'muiza.png',
+        iconUrl: '../static/muiza.png',
         iconSize: [150, 95],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -429,7 +429,7 @@ function createMuiza4Marker(map){
 
 function createZooMarker(map){
     var zooIcon = L.icon({
-        iconUrl: 'zoo.png',
+        iconUrl: '../static/zoo.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -444,7 +444,7 @@ function createZooMarker(map){
 
 function createpilsetaMarker(map) {
     var pilsetaIcon = L.icon({
-        iconUrl: 'pilseta.png',
+        iconUrl: '../static/pilseta.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
@@ -460,7 +460,7 @@ function createpilsetaMarker(map) {
 
 function createEkaMarker(map){
     var ekaIcon = L.icon({
-        iconUrl: 'eka.png',
+        iconUrl: '../static/eka.png',
         iconSize: [40, 50],
         iconAnchor: [20, 40],
         popupAnchor: [-3, -76]
