@@ -8,6 +8,7 @@
 6. ~~Database~~
 7. ~~Cookie login~~
 8. Apmeklētās vietas ?
+9. Login required
 
 
 Ka mes uztaisam login?
