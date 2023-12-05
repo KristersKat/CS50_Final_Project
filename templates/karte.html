@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,6 @@
     <script src="https://cdn.rawgit.com/shramov/leaflet-plugins/leaflet-1.2.0/layer/tile/Google.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.lightbox/dist/leaflet.lightbox.css" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet.lightbox/dist/leaflet.lightbox.js"></script>
-    <script src="funkcijas.js"></script>
     <title>Karte</title>
     <style>
         .map {
@@ -29,91 +28,297 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.welcome-message {
+            font-family: Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: light;
+            color: #FFFFFF;
+        }
+        .navbar-nav {
+            position: relative;
+        }
 </style>
 </head>
 <body>
-    <div id="map" class="map"></div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <h1 class = "welcome-message"> Aizkraukles izzinošā karte </h1>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="http://visitaizkraukle.lv/" class="btn btn-outline-dark text-light">
+                                <button type="button" class="btn btn-outline-dark text-light">Visit Aizkraukle</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="vietas.html" class="btn btn-outline-dark text-light">
+                                <button type="button" class="btn btn-outline-dark text-light">Izzini vietas</button>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="speles.html" class="btn btn-outline-dark text-light">
+                                <button type="button" class="btn btn-outline-dark text-light">Spēles</button>
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+   <div id="map" class="map"></div>
 
     <script>
 
-        var map = L.map('map').setView([56.5983777521382, 25.250070015595], 13);
+    var map = L.map('map').setView([56.5983777521382, 25.250070015595], 13);
 
         // Add the Google Maps layer to the map
         var googleHybrid = L.tileLayer('http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}', {
             maxZoom: 20,
             subdomains: ['mt0','mt1','mt2','mt3']
         }).addTo(map);
+        var googleRoadmap = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0','mt1','mt2','mt3']
+    })
 
-        var pilsIcon = L.icon({
-            iconUrl: '../static/pils.png',
-            iconSize: [40, 95],
-            iconAnchor: [20, 40],
-            popupAnchor: [-3, -76]
-        });
+        var baseLayers = {
+    "Google Roadmap": googleRoadmap,
+    "Google Hybrid": googleHybrid,
 
-        L.marker([56.63829812366905, 25.41759360725397], { icon: pilsIcon }).addTo(map).bindPopup("Kokneses pils");
+};
 
-        createcafeMarker(map);
 
-        createcafe2Marker(map);
+googleRoadmap.addTo(map);
 
-        createcafe3Marker(map);
+function createCafeMarker(map, iconUrl, coordinates, popupUrl) {
+    var cafeIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 50],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
 
-        createcafe4Marker(map);
+    var cafeMarker = L.marker(coordinates, { icon: cafeIcon }).addTo(map);
 
-        createcafe5Marker(map);
+    cafeMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
 
-        createcafe6Marker(map);
+    return cafeMarker;
+}
 
-        createcafe7Marker(map);
+// Create a layer group for cafes
+function createCafeLayerGroup(map) {
+    var cafeGroup = L.layerGroup();
 
-        createcafe8Marker(map);
+    // Add cafe markers to the layer group
+    createCafeMarker(map, '../static/cafe.png', [56.64898330950422, 25.12054209745869], 'http://www.majassaldejums.lv').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.647415, 25.122213], 'http://visitaizkraukle.lv/bari/bars-lakosta').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.625164, 25.086712], 'https://www.klidzina.lv/').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.600006, 25.654915], 'https://liepkalni.lv/lv/index').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.577438, 25.226524], 'http://visitaizkraukle.lv/edinasana/kafejnica-romantika').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.596783, 25.245852], 'http://visitaizkraukle.lv/edinasana/krasta-krogs').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.598583, 25.246223], 'http://visitaizkraukle.lv/edinasana/kafejnica-cepiens').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.599377, 25.250486], 'https://kwb.lv/').addTo(cafeGroup);
+    createCafeMarker(map, '../static/cafe.png', [56.643398, 25.427700], 'http://visitaizkraukle.lv/edinasana/krodzins-rudolfs').addTo(cafeGroup);
 
-        createcafe9Marker(map);
+    return cafeGroup;
+}
 
-        createdarzsMarker(map);
+// Create and add the cafe layer group to the map
+var cafeLayerGroup = createCafeLayerGroup(map);
+cafeLayerGroup.addTo(map);
 
-        createdarzs2Marker(map);
+// Add layer control
 
-        createdarzs3Marker(map);
+function createdarzsMarker(map, iconUrl, coordinates, popupUrl) {
+    var darzsIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 50],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
 
-        createdarzs4Marker(map);
+    var darzsMarker = L.marker(coordinates, { icon: darzsIcon }).addTo(map);
 
-        createdarzs5Marker(map);
+    darzsMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
 
-        createMuzejsMarker(map);
+    return darzsMarker;
+}
 
-        createMuzejs2Marker(map);
+function createdarzsLayerGroup(map) {
+    var darzsGroup = L.layerGroup();
+    createdarzsMarker(map, '../static/darzs.png', [56.63513293273697, 25.442591268692485], 'https://www.liktendarzs.lv').addTo(darzsGroup);
+    createdarzsMarker(map, '../static/darzs.png', [56.271397, 25.174673], 'http://visitaizkraukle.lv/apskates_objekti/romalda_gurkla_lielo_koka_figuru_darzs').addTo(darzsGroup);
+    createdarzsMarker(map, '../static/darzs.png', [56.596371, 25.247849], 'http://visitaizkraukle.lv/apskates_objekti/kalka-cepla-drupas-un-dolomitu-atsegumi').addTo(darzsGroup);
+    createdarzsMarker(map, '../static/darzs.png', [56.699875, 25.817486], 'http://visitaizkraukle.lv/apskates_objekti/vesetas-palienes-purvs').addTo(darzsGroup);
+    createdarzsMarker(map, '../static/darzs.png', [56.623272, 25.043024], 'http://visitaizkraukle.lv/apskates_objekti/sunu-taka').addTo(darzsGroup);
+    return darzsGroup;
+}
 
-        createMuzejs3Marker(map);
+var darzsLayerGroup = createdarzsLayerGroup(map);
+darzsLayerGroup.addTo(map);
 
-        createMuzejs4Marker(map);
+function createMuzejsMarker(map, iconUrl, coordinates, popupUrl) {
+    var muzejsIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 50],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
 
-        createMuzejs5Marker(map);
+    var MuzejsMarker = L.marker(coordinates, { icon: muzejsIcon }).addTo(map);
 
-        createMuzejs6Marker(map);
+    MuzejsMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
 
-        createMuzejs7Marker(map);
+    return MuzejsMarker;
+}
 
-        createMuzejs8Marker(map);
+function createMuzejsLayerGroup(map) {
+    var muzejsGroup = L.layerGroup();
+    createMuzejsMarker(map, '../static/muzejs.png', [56.196922, 25.380306], 'http://visitaizkraukle.lv/apskates_objekti/jana-jaunsudrabina-muzejs-riekstini').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.199856, 25.313932], 'http://visitaizkraukle.lv/apskates_objekti/neretas_novadpetniecibas_muzejs ').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.187351, 25.242300], 'http://visitaizkraukle.lv/apskates_objekti/gricgales_mednu_krogs').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.615116, 25.224726], 'http://www.aizkrauklesmuzejs.lv/').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.599152, 25.272106], 'http://visitaizkraukle.lv/apskates_objekti/aizkraukles-vestures-un-makslas-muzejs-kalna-ziedi').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.745636, 25.102098], 'https://www.muzikanti.lv/').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.617054, 25.078545], 'http://visitaizkraukle.lv/apskates_objekti/petera-graudula-muzejs-dailamatnieka-seta').addTo(muzejsGroup);
+    createMuzejsMarker(map, '../static/muzejs.png', [56.722176, 25.488577], 'http://visitaizkraukle.lv/apskates_objekti/latvijas_biskopibas_vestures_muzejs').addTo(muzejsGroup);
 
-        createPilskalnsMarker(map);
+    return muzejsGroup;
+}
 
-        createPilskalns2Marker(map);
+var MuzejsLayerGroup = createMuzejsLayerGroup(map);
+MuzejsLayerGroup.addTo(map);
 
-        createMuizaMarker(map);
 
-        createMuiza2Marker(map);
+function createPilsMarker(map, iconUrl, coordinates, popupUrl) {
+    var pilsIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 95],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
 
-        createMuiza3Marker(map);
+    var PilsMarker = L.marker(coordinates, { icon: pilsIcon }).addTo(map);
 
-        createMuiza4Marker(map);
+    PilsMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
 
-        createZooMarker(map);
+    return PilsMarker;
+}
+function createPilsLayerGroup(map) {
+    var pilsGroup = L.layerGroup();
+    createPilsMarker(map, '../static/pils.png', [56.195370, 25.156075], 'http://visitaizkraukle.lv/apskates_objekti/strobuku-pilskalns').addTo(pilsGroup);
+    createPilsMarker(map, '../static/pils.png', [56.599735, 25.274021], 'http://visitaizkraukle.lv/apskates_objekti/kalnaziedu_pilskalns').addTo(pilsGroup);
+    createPilsMarker(map, '../static/pils.png', [56.63829812366905, 25.41759360725397], 'https://www.latvia.travel/lv/apskates-vieta/kokneses-pilsdrupas').addTo(pilsGroup);
 
-        createpilsetaMarker(map);
+    return pilsGroup;
 
-        createEkaMarker(map);
+}
+
+var PilsLayerGroup = createPilsLayerGroup(map);
+PilsLayerGroup.addTo(map);
+
+function createMuizaMarker(map, iconUrl, coordinates, popupUrl) {
+    var muizaIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [150, 95],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
+
+    var MuizaMarker = L.marker(coordinates, { icon: muizaIcon }).addTo(map);
+
+    MuizaMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
+
+    return MuizaMarker;
+}
+
+function createMuizaLayerGroup(map) {
+    var muizaGroup = L.layerGroup();
+    createMuizaMarker(map, '../static/muiza.png', [56.281448, 25.026699], 'http://visitaizkraukle.lv/apskates_objekti/vecmemeles_muiza').addTo(muizaGroup);
+    createMuizaMarker(map, '../static/muiza.png', [56.326195, 25.247431], 'http://visitaizkraukle.lv/apskates_objekti/lielzalves_muiza').addTo(muizaGroup);
+    createMuizaMarker(map, '../static/muiza.png', [56.712337, 25.685585], 'https://odzienasmuiza.lv/').addTo(muizaGroup);
+    createMuizaMarker(map, '../static/muiza.png', [56.722805, 25.482252], 'http://visitaizkraukle.lv/apskates_objekti/vecbebru_muizas_komplekss').addTo(muizaGroup);
+
+    return muizaGroup;
+
+
+}
+var MuizaLayerGroup = createMuizaLayerGroup(map);
+MuizaLayerGroup.addTo(map);
+
+
+function createZooMarker(map, iconUrl, coordinates, popupUrl) {
+    var zooIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 50],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
+
+    var ZooMarker = L.marker(coordinates, { icon: zooIcon }).addTo(map);
+
+    ZooMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
+
+    return ZooMarker;
+}
+function createZooLayerGroup(map) {
+    var zooGroup = L.layerGroup();
+    createZooMarker(map, '../static/zoo.png', [56.751640, 25.613997], 'http://visitaizkraukle.lv/apskates_objekti/mini-zoo-karlinas').addTo(zooGroup);
+    return zooGroup;
+}
+
+var ZooLayerGroup = createZooLayerGroup(map);
+ZooLayerGroup.addTo(map);
+
+function createCitiMarker(map, iconUrl, coordinates, popupUrl) {
+    var citiIcon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [40, 50],
+        iconAnchor: [20, 40],
+        popupAnchor: [-3, -76]
+    });
+
+    var CitiMarker = L.marker(coordinates, { icon: citiIcon }).addTo(map);
+
+    CitiMarker.on('click', function() {
+        window.location.href = popupUrl;
+    });
+
+    return CitiMarker;
+}
+
+function createCitiLayerGroup(map) {
+    var citiGroup = L.layerGroup();
+    createCitiMarker(map, '../static/pilseta.png', [56.617348, 25.081736], 'http://visitaizkraukle.lv/apskates_objekti/jaunjelgavas_pilsetas_vesturiskais_centrs').addTo(citiGroup);
+    createCitiMarker(map, '../static/eka.png', [56.644146, 25.116262], 'https://www.radada.lv/').addTo(citiGroup);
+    return citiGroup;
+}
+
+var CitiLayerGroup = createCitiLayerGroup(map);
+CitiLayerGroup.addTo(map);
+
+
+
+// Add layer control
+L.control.layers(baseLayers, { "Kafejnīcas": cafeLayerGroup , "Daba": darzsLayerGroup, "Muzeji": MuzejsLayerGroup, "Pilis": PilsLayerGroup, "Muižas": MuizaLayerGroup, "Zoo": ZooLayerGroup, "Citi": CitiLayerGroup}).addTo(map);
+
     </script>
 </body>
 </html>
