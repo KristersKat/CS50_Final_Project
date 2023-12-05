@@ -17,7 +17,7 @@ def index():
     user_list = result.fetchall()
     
     print(user_list)
-    return render_template("karte.html")
+    return render_template("avatar.html")
 
 @app.route('/welcome')
 def welcome():
