@@ -1,5 +1,10 @@
 // Locations and their coordinates, change and add apropriate locations
 const locations = {
+    rbs: {
+        latitude: 56.95737134876442,
+        longitude: 24.11770500117552,
+        info: "Tu atrodies Rīgas Biznesa skolā"  
+    }, 
     Likteņdārzs: {
         name: "Likteņdārzs",
         latitude: 56.63513293273697,
