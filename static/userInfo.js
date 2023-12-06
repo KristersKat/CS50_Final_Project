@@ -5,9 +5,9 @@ async function getUserInfo()
     // Checks if there is information about the user
     if (!localStorage.getItem("user_id") || !localStorage.getItem("name"))
     {
-        window.location.href = '/welcome';
+        if (!window.location.href === '/welcome') window.location.href = '/welcome';
         // Wont run after being redirected, but might be useful in the welcome page
-        /*let name;
+        let name;
         // Check if name isn't empty
         do
         {
@@ -30,7 +30,7 @@ async function getUserInfo()
         localStorage.setItem("user_id", id);
         localStorage.setItem("name", name);
         localStorage.setItem("items", items);
-        return {id, name, items};*/
+        return {id, name, items};
     }
 
     // If ther is information about user, updates the items
