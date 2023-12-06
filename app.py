@@ -10,14 +10,35 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    #db.session.execute(text("INSERT INTO Users (name, item) VALUES ('Ojars', 'dators')"))
-    #db.session.commit()
+    return render_template("karte.html")
 
-    result = db.session.execute(text("SELECT * FROM Users"))
-    user_list = result.fetchall()
-    
-    print(user_list)
+@app.route('/avatar')
+def avatar():
     return render_template("avatar.html")
+
+@app.route('/game')
+def game():
+    return render_template("game.html")
+
+@app.route('/hes')
+def hes():
+    return render_template("hes.html")
+
+@app.route('/koknese')
+def koknese():
+    return render_template("koknese.html")
+
+@app.route('/liktendarzs')
+def liktendarzs():
+    return render_template("liktendarzs.html")
+
+@app.route('/pils')
+def pils():
+    return render_template("pils.html")
+
+@app.route('/vietas')
+def vietas():
+    return render_template("vietas.html")
 
 @app.route('/welcome')
 def welcome():
