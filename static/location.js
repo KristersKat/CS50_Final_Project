@@ -95,7 +95,7 @@ function atLocation(userLocation)
         const location = locations[locationName];
         console.log(locationName);
 
-        if (!getDistance(location, userLocation) < 10)
+        if (getDistance(location, userLocation) < 10)
         {
             // Edit this to change what happens when the user IS at the location
             alert("Tu esi sasniedzis " + location.name + "! " + location.info);
