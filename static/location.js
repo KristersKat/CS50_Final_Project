@@ -4,61 +4,71 @@ const locations = {
         name: "RBS",
         latitude: 56.95737134876442,
         longitude: 24.11770500117552,
-        info: "Tu atrodies Rīgas Biznesa skolā"  
+        info: "Tu atrodies Rīgas Biznesa skolā",
+        userAtLocation: false,
     }, 
     Likteņdārzs: {
         name: "Likteņdārzs",
         latitude: 56.63513293273697,
         longitude: 25.442591268692485,
-        info: "Likteņdārzs ir dabā veidots simbols tautas nemitīgai atjaunotnei un izaugsmei te satiekas gan cilvēka, gan valsts pagātne, tagadne un nākotne. Līdzīgi kā Brīvības piemineklis, arī Likteņdārzs tiek veidots, pateicoties ziedojumiem."
+        info: "Likteņdārzs ir dabā veidots simbols tautas nemitīgai atjaunotnei un izaugsmei te satiekas gan cilvēka, gan valsts pagātne, tagadne un nākotne. Līdzīgi kā Brīvības piemineklis, arī Likteņdārzs tiek veidots, pateicoties ziedojumiem.",
+        userAtLocation: false,
     },
     Jāņa_Jaunsudrabiņa_muzejs_Riekstiņi: {
         name: "Jāņa Jaunsudrabiņa muzejs Riekstiņi",
         latitude: 56.196922,
         longitude: 25.380306,
-        info:" Muzejs iekārtots senas zemnieku sētas saimniecības ēkā, kas atspoguļo agrāko laiku tradīcijas un amatniecības prasmes Sēlijas novadā, kas ir bagāts ar sadzīves un saimniecības priekšmetiem, kādi raksturīgi sēļu materiālajai kultūrai."
+        info:" Muzejs iekārtots senas zemnieku sētas saimniecības ēkā, kas atspoguļo agrāko laiku tradīcijas un amatniecības prasmes Sēlijas novadā, kas ir bagāts ar sadzīves un saimniecības priekšmetiem, kādi raksturīgi sēļu materiālajai kultūrai.",
+        userAtLocation: false,
     },
     Neretas_novadpētniecības_muzejs: {
         name: "Neretas novadpētniecības muzejs",
         latitude: 56.199856,
         longitude: 25.313932,
-        info: "Muzejā tiek uzkrāti novadpētniecības materiāli par Neretas apkārtni un cilvēkiem. Regulāri tiek veidota kāda novada cilvēka darbu izstāde vai izstādīti eksponāti no novadnieku privātkolekcijām."
+        info: "Muzejā tiek uzkrāti novadpētniecības materiāli par Neretas apkārtni un cilvēkiem. Regulāri tiek veidota kāda novada cilvēka darbu izstāde vai izstādīti eksponāti no novadnieku privātkolekcijām.",
+        userAtLocation: false,
     },
     Gricgales_Medņu_krogs:{
         name: "Gricgales Medņu krogs",
         latitude: 56.187351,
         longitude: 25.242300,
-        info: "Gricgales muižas krogs, kurš pieder literatūrkritiķei Lūcijai Ķuzānei, glabā liecības par L.Ķuzānes dzimtas un novada vēsturi, tas laipni gaida apmeklētājus, arī individuālos Latvijas apceļotājus."
+        info: "Gricgales muižas krogs, kurš pieder literatūrkritiķei Lūcijai Ķuzānei, glabā liecības par L.Ķuzānes dzimtas un novada vēsturi, tas laipni gaida apmeklētājus, arī individuālos Latvijas apceļotājus.",
+        userAtLocation: false,
     },
     Aizkraukles_Vēstures_un_mākslas_muzejs:{
         name: "Aizkraukles Vēstures un mākslas muzejs",
         latitude: 56.615116,
         longitude: 25.224726,
-        info: "Ekspozīcija aptver laika periodu no senākajiem laikiem līdz 20.gs. pirmajai pusei. Izstāžu namā tiek rīkotas vēsturiskas un aktuālas izstādes."
+        info: "Ekspozīcija aptver laika periodu no senākajiem laikiem līdz 20.gs. pirmajai pusei. Izstāžu namā tiek rīkotas vēsturiskas un aktuālas izstādes.",
+        userAtLocation: false,
     },
     Strobuku_pilskalns:{
         name: "Strobuku pilskalns",
         latitude: 56.195370,
         longitude: 25.156075,
-        info:"Pilskalnes Strobuku pilskalns atrodas ap 300 metriem uz rietumiem no Strobuku mājām. Pilskalnu pirmais literatūrā 1882. gadā minēja A.Bīlenšteins. E.Brastiņš Strobuku pilskalnu par īstu pilskalnu neatzina. Izteikta doma, ka Strobuku pilskalns būtu uzskatāms par apmetni."
+        info:"Pilskalnes Strobuku pilskalns atrodas ap 300 metriem uz rietumiem no Strobuku mājām. Pilskalnu pirmais literatūrā 1882. gadā minēja A.Bīlenšteins. E.Brastiņš Strobuku pilskalnu par īstu pilskalnu neatzina. Izteikta doma, ka Strobuku pilskalns būtu uzskatāms par apmetni.",
+        userAtLocation: false,
     },
     Kalnaziedu_pilskalns:{
         name: "Kalnaziedu pilskalns",
         latitude: 56.599735,
         longitude: 25.274021,
-        info: "Pilskalns piekļaujas muzeja “Kalna Ziedi” teritorijai. Apdzīvots no 1. g.t. p.m.ē. beigām, iespējams, tas ticis izmantots kā patvēruma pilskalns."
+        info: "Pilskalns piekļaujas muzeja “Kalna Ziedi” teritorijai. Apdzīvots no 1. g.t. p.m.ē. beigām, iespējams, tas ticis izmantots kā patvēruma pilskalns.",
+        userAtLocation: false,
     },
     Kokneses_pilsdrupas:{
         name: "Kokneses pilsdrupas",
         latitude: 56.63829812366905,
         longitude: 25.41759360725397,
-        info:"Mūsdienās, atjaunojot sendienu slavu un godu, Kokneses pilsdrupās notiek teatralizēti uzvedumi, koncerti, naudas kalšana, kāzu ceremonijas viduslaiku un senlatviešu stilā un par tradīciju izveidojušies Sama modināšanas svētki."
+        info:"Mūsdienās, atjaunojot sendienu slavu un godu, Kokneses pilsdrupās notiek teatralizēti uzvedumi, koncerti, naudas kalšana, kāzu ceremonijas viduslaiku un senlatviešu stilā un par tradīciju izveidojušies Sama modināšanas svētki.",
+        userAtLocation: false,
     },
     Ozienas_pils:{
         name: "Ozienas pils",
         latitude: 56.712337,
         longitude: 25.685585,
-        info: "Odzienas muižas pirmsākumi skaitāmi jau no 1455. gada. Pašreizējā muižas pils ēka celta 19. gadsimta vidū Rūdolfa Fridriha Adriana fon Brimmera laikā."
+        info: "Odzienas muižas pirmsākumi skaitāmi jau no 1455. gada. Pašreizējā muižas pils ēka celta 19. gadsimta vidū Rūdolfa Fridriha Adriana fon Brimmera laikā.",
+        userAtLocation: false,
     },
 }
 
@@ -95,10 +105,12 @@ function atLocation(userLocation)
     {
         const location = locations[locationName];
 
+        if(location.userAtLocation) return;
         if (getDistance(location, userLocation) < 10)
         {
             // Edit this to change what happens when the user IS at the location
             alert("Tu esi sasniedzis " + location.name + "! " + location.info);
+            location.userAtLocation = true;
             //document.getElementById(locationName).innerHTML = message;
         }
         /*else
