@@ -9,7 +9,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <style>
-        body {
+        #questions {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -30,7 +30,7 @@
             margin-top: 60px;
         }
 
-        button {
+        .triviaButton {
             margin-top: 10px;
             padding: 10px;
             font-size: 16px;
@@ -46,126 +46,127 @@
             background-color: #dc3545;
             color: #fff;
         }
-        .navbar {
-            position: relative;
-            z-index: 1;
-        }
     </style>
 </head>
-    <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-          <div class="collapse navbar-collapse" id="navbar">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a href="/" class="btn btn-outline-dark text-light">
-                      <button type="button" class="btn btn-outline-dark text-light">Aizkraukles izzinošā karte</button>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="http://visitaizkraukle.lv/" class="btn btn-outline-dark text-light">
-                      <button type="button" class="btn btn-outline-dark text-light">Visit Aizkraukle</button>
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/vietas" class="btn btn-outline-dark text-light">
-                      <button type="button" class="btn btn-outline-dark text-light">Izzini vietas</button>
-                  </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/game" class="btn btn-outline-dark text-light">
-                      <button type="button" class="btn btn-outline-dark text-light">Spēles</button>
-                  </a>
-                  </li>
-              </ul>
-          </div>
-        </nav>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="btn btn-outline-dark text-light">
+                    <button type="button" class="btn btn-outline-dark text-light">Aizkraukles izzinošā karte</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://visitaizkraukle.lv/" class="btn btn-outline-dark text-light">
+                    <button type="button" class="btn btn-outline-dark text-light">Visit Aizkraukle</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/vietas" class="btn btn-outline-dark text-light">
+                    <button type="button" class="btn btn-outline-dark text-light">Izzini vietas</button>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/game" class="btn btn-outline-dark text-light">
+                    <button type="button" class="btn btn-outline-dark text-light">Spēles</button>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/trivia" class="btn btn-outline-dark text-light">
+                    <button type="button" class="btn btn-outline-dark text-light">Viktorīna</button>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<div>
-<div id="question-container">
-    <h2 id="question"></h2>
-    <div id="options"></div>
-    <button id="next-btn">Nākamais jautājums</button>
-</div>
+    <div id="questions">
+        <div id="question-container">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <button class="triviaButton" id="next-btn">Nākamais jautājums</button>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-    crossorigin="anonymous"></script>
-<script>
-    const questions = [
-        {
-            question: "Kāds ir Aizkraukles vēsturiskais nosaukums?",
-            options: ["Stučka", "Vietava", "Pērse", "Aizpuri"],
-            correctAnswer: "Stučka"
-        },
-        {
-            question: "Cik garš ir Pļaviņu HES tunelis Aizkrauklē?",
-            options: ["180m", "167m", "178m ", "188m"],
-            correctAnswer: "188m"
-        },
-        {
-            question: "Kuras upes krastā atrodas Kokneses pils?",
-            options: ["Svēte", "Daugava", "Mūsa", "Aiviekste"],
-            correctAnswer: "Daugava"
-        }
-    ];
-
-    let currentQuestionIndex = -1;
-
-    const questionElement = document.getElementById("question");
-    const optionsContainer = document.getElementById("options");
-    const nextButton = document.getElementById("next-btn");
-
-    function showQuestion(index) {
-        const currentQuestion = questions[index];
-        questionElement.textContent = currentQuestion.question;
-
-        optionsContainer.innerHTML = "";
-        currentQuestion.options.forEach((option, optionIndex) => {
-            const button = document.createElement("button");
-            button.textContent = option;
-            button.addEventListener("click", () => checkAnswer(option, currentQuestion.correctAnswer));
-            optionsContainer.appendChild(button);
-        });
-    }
-
-    function checkAnswer(selectedAnswer, correctAnswer) {
-        const buttons = optionsContainer.querySelectorAll("button");
-
-        buttons.forEach(button => {
-            if (button.textContent === correctAnswer) {
-                button.classList.add("correct");
-            } else {
-                button.classList.add("incorrect");
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        crossorigin="anonymous"></script>
+    <script>
+        const questions = [
+            {
+                question: "Kāds ir Aizkraukles vēsturiskais nosaukums?",
+                options: ["Stučka", "Vietava", "Pērse", "Aizpuri"],
+                correctAnswer: "Stučka"
+            },
+            {
+                question: "Cik garš ir Pļaviņu HES tunelis Aizkrauklē?",
+                options: ["180m", "167m", "178m ", "188m"],
+                correctAnswer: "188m"
+            },
+            {
+                question: "Kuras upes krastā atrodas Kokneses pils?",
+                options: ["Svēte", "Daugava", "Mūsa", "Aiviekste"],
+                correctAnswer: "Daugava"
             }
+        ];
 
-            button.disabled = true;
-        });
-    }
+        let currentQuestionIndex = -1;
 
-    function resetQuestion() {
-        const buttons = optionsContainer.querySelectorAll("button");
+        const questionElement = document.getElementById("question");
+        const optionsContainer = document.getElementById("options");
+        const nextButton = document.getElementById("next-btn");
 
-        buttons.forEach(button => {
-            button.classList.remove("correct", "incorrect");
-            button.disabled = false;
-        });
+        function showQuestion(index) {
+            const currentQuestion = questions[index];
+            questionElement.textContent = currentQuestion.question;
 
-        nextButton.disabled = true;
-    }
+            optionsContainer.innerHTML = "";
+            currentQuestion.options.forEach((option, optionIndex) => {
+                const button = document.createElement("button");
+                button.classList.add("triviaButton");
+                button.textContent = option;
+                button.addEventListener("click", () => checkAnswer(option, currentQuestion.correctAnswer));
+                optionsContainer.appendChild(button);
+            });
+        }
 
-    function nextQuestion() {
-        resetQuestion();
+        function checkAnswer(selectedAnswer, correctAnswer) {
+            const buttons = optionsContainer.querySelectorAll("button");
 
-        currentQuestionIndex = Math.floor(Math.random() * questions.length);
-        showQuestion(currentQuestionIndex);
+            buttons.forEach(button => {
+                if (button.textContent === correctAnswer) {
+                    button.classList.add("correct");
+                } else {
+                    button.classList.add("incorrect");
+                }
 
-        nextButton.disabled = false;
-    }
+                button.disabled = true;
+            });
+        }
 
-    nextButton.addEventListener("click", nextQuestion);
+        function resetQuestion() {
+            const buttons = optionsContainer.querySelectorAll("button");
 
-    nextQuestion();
-</script>
+            buttons.forEach(button => {
+                button.classList.remove("correct", "incorrect");
+                button.disabled = false;
+            });
 
+            nextButton.disabled = true;
+        }
+
+        function nextQuestion() {
+            resetQuestion();
+
+            currentQuestionIndex = Math.floor(Math.random() * questions.length);
+            showQuestion(currentQuestionIndex);
+
+            nextButton.disabled = false;
+        }
+
+        nextButton.addEventListener("click", nextQuestion);
+
+        nextQuestion();
+    </script>
 </body>
 </html>
-
