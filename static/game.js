@@ -161,10 +161,10 @@ window.addEventListener("load", function(){
             context.fillText("Rezultāts: " + this.game.score, 20, 40);
             context.fillStyle = this.liveColor;
             context.fillText("Dzīvības: " + this.game.lives, 20, 70);
-            context.fillText("Raunds: " + this.game.round, 20, 100);
+            context.fillText("Līmenis: " + this.game.round, 20, 100);
             if (this.game.roundUpdate && this.game.targets.length === 0) {
                 context.fillStyle = "white";
-                context.fillText("Raunds " + (this.game.round - 1) + " pabeigts", 310, 370);
+                context.fillText("Līmenis " + (this.game.round - 1) + " pabeigts", 310, 370);
             }
         }
     }

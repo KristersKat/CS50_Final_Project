@@ -14,7 +14,7 @@ async function getUserInfo()
     id = localStorage.getItem("user_id");
     name = localStorage.getItem("name");
 
-    const response = await fetch("http://127.0.0.1:5000/items", {
+    const response = await fetch("/items", {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain',
@@ -42,7 +42,7 @@ async function sendName() {
     let name = document.getElementById("name").value;
 
     // Fetches the new user id and items (sends the name of user)
-    const response = await fetch("http://127.0.0.1:5000/newuser", {
+    const response = await fetch("/newuser", {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain',
