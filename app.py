@@ -36,6 +36,10 @@ def liktendarzs():
 def pils():
     return render_template("pils.html")
 
+@app.route('/trivia')
+def trivia():
+    return render_template("trivia.html")
+
 @app.route('/vietas')
 def vietas():
     return render_template("vietas.html")
