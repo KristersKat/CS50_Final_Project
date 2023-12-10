@@ -30,7 +30,6 @@ async function getUserInfo()
 
 (async () => {
     const user = await getUserInfo();
-    console.log(user);
 })();
 
 async function sendName() {
